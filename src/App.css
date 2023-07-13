@@ -1,38 +1,80 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+*{
+  margin:0px;
+  padding:0px;
+  
+  
+}
+*::-webkit-scrollbar {
+  width: 1px;
+  
+}
+
+.mom{
+  margin:0px;
+  padding:0px;
+ 
+  
+}
+.container{
+display:flex;
+margin: 2rem auto;
+overflow-x:scroll;
+white-space:nowrap;
+width: 100%;
+cursor: pointer;
+
+}
+
+.container>.imgLister{
+   margin: 20px;
+}
+.imgLister:hover{
+  margin: 5px;
+  transform:scale(1.15) translateZ(0);
+  transition:2s;
+  text-align:center;
+  
+}
+.cc{
+  width: 18em;
+  height: 22em;
+  margin: 5px;
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 1em;
+}
+.dd{
+  background-image: linear-gradient(to right, red , yellow);
+ text-align: center;
+ justify-content: center;
+ position: relative;
+ bottom: 50px;
+}
+hr{
+        border: none;
+        height: 5px;
+        background: #820505;
+        background-image: linear-gradient(to right, #986603, #05786b, #f90404);
+}
+
+h1{
+  background-color: transparent;
+  font-family: 'Calligraffitti';
+  font-weight:bolder;
+  font-size: 50px;
+  margin-top: 5px;
   text-align: center;
+
+}
+.form-control{
+  background-color: transparent!important;
+    border-color: transparent!important;
+    outline:linen!important;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2{
+  color: #f90404;
 }
