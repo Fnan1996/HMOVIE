@@ -1,6 +1,6 @@
 const SearchBox = (props) => {
     return ( 
-        <div className="col col-sm-4">
+        <div>
             <input
             
             type="text" 

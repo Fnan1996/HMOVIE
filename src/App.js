@@ -1,11 +1,17 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import FilmList from './Components/FilmList';
-import FilmListHeading from './Components/FilmListHeading';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SearchBox from './Components/SearchBox';
+import RemoveFavorites from "./Components/RemoveFavorites";
 import AddFavorites from './Components/AddFavorites';
-import RemoveFavorites from './Components/RemoveFavorites';
+
+import { Route,Routes } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Favoraite from './pages/Favoraite';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 
 
 
@@ -70,31 +76,26 @@ const getFilmsRequest = async(searchFilm)=>{
   
  <>
  <div className='mom' >
-    <div className="row d-flex align-items-end mt-2 mb-4">
-      <FilmListHeading heading="hani-Flex"/>
-      <SearchBox searchFilm={searchFilm} setSearchFilm={setSearchFilm} />
-    </div>
-    <hr />
-   <div className="container ">
-      <FilmList
+    <Header searchFilm={searchFilm} setSearchFilm={setSearchFilm}  />
+    <Routes>
+      <Route  element={<Homepage  films={films} 
+       favoritesChosen={addFavoriteFilm}
+       favorites={AddFavorites} />} />
+       <Route path='/' element={<Homepage>
+        <FilmList
        films={films} 
        favoritesChosen={addFavoriteFilm}
        favorites={AddFavorites}/>
-    </div>
-    <hr />
-     <div className="row d-flex align-items-start mt-2 mb-4">
-       <FilmListHeading heading="Your Favorite"/>      
-     </div>
-
-      <div className="container">
-      <FilmList className="FilmList "
+       </Homepage>} >       
+       </Route>
+      <Route path='/favorate'  element={<Favoraite>
+        {<FilmList className="FilmList "
        films={favoriteFilms} 
        favoritesChosen={removeFavoriteFilm}
-       favorites={RemoveFavorites}/>
-    </div>  
-    <hr />
-    
-    
+       favorites={RemoveFavorites}/>} 
+      </Favoraite>} />
+    </Routes>
+    <Footer />
  </div>
  </>
  

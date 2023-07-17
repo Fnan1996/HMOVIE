@@ -1,4 +1,4 @@
-import React from "react";
+
 
 
 
@@ -9,7 +9,7 @@ const FilmList = (props) => {
      <>
         {props.films.map(
             (film,index)=>
-            <div  className="imgLister">
+            <div  className="imgLister" key={index}>
                 <img className="cc img-fluid" src={film.Poster} alt='Harry Potter Pic'  />
                 <div onClick={()=>props.favoritesChosen(film)} className="dd">
                     <Favorites />
